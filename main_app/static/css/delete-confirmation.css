@@ -1,0 +1,68 @@
+.confirmation-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.confirmation-header h1 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.confirmation-body {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.confirmation-body h2 {
+    font-size: 1.5rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+/* تنسيق النموذج */
+.confirmation-form {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin: 0.5rem;
+}
+
+.btn.danger {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.btn.danger:hover {
+    background-color: #c0392b;
+}
+
+.btn.secondary {
+    background-color: #95a5a6;
+    color: #fff;
+}
+
+.btn.secondary:hover {
+    background-color: #7f8c8d;
+}

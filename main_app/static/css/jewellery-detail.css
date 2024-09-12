@@ -1,0 +1,73 @@
+.jewellery-container {
+    display: flex;
+    gap: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.jewellery-img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.jewellery-details {
+    max-width: 60%;
+}
+
+.jewellery-details h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.jewellery-details h2 {
+    font-size: 1.5rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.jewellery-details p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+.jewellery-actions {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.jewellery-actions .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    transition: background-color 0.3s ease;
+    margin: 0 0.5rem;
+}
+
+.btn.warn {
+    background-color: #f39c12;
+}
+
+.btn.warn:hover {
+    background-color: #e67e22;
+}
+
+.btn.danger {
+    background-color: #e74c3c;
+}
+
+.btn.danger:hover {
+    background-color: #c0392b;
+}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/formx.css' %}" />
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    {% if jewellery %}
+        <h1>Edit {{ jewellery.name }}</h1>
+    {% else %}
+        <h1>Add a New Jewellery</h1>
+    {% endif %}
+</div>
+
+<form action="" method="post" enctype="multipart/form-data" class="form-container">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+        <button type="submit" class="btn submit">Submit!</button>
+    </table>
+   
+</form>
+
+{% endblock %}

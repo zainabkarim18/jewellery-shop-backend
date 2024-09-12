@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/jewellery/jewellery-index.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="card-container">
+    <h1>Jewellery List</h1>
+    <div class="cards-wrapper">
+        {% for jewellery in jewelleries %}
+            <div class="card">
+                <a href="{% url 'jewellery-detail' jewellery.id %}">
+                    <div class="card-content">
+                        <div class="card-img-container">
+                            <img src="{{ jewellery.image }}" alt="{{ jewellery.name }}" />
+                        </div>
+                        <h2 class="card-title">{{ jewellery.name }}</h2>
+                        <p class="card-stock">Stock: {{ jewellery.stock }}</p>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

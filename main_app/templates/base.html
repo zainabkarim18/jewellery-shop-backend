@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.png' %}" />
+    <link rel="stylesheet" href="{% static 'css/basex.css' %}" />
+
+    <title>Jewellery Collector</title>
+    {% block head %} 
+    {% endblock %}
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'jewellery-index' %}">All Jewellery</a></li>
+                    <li><a href="{% url 'jewellery-create' %}">Add a Jewellery</a></li>
+                    <li><a href="{% url 'list-all-orders' %}">All Orders</a></li>
+                    <li class="logout-form">
+                        <form method="post" action="{% url 'admin:logout' %}">
+                            {% csrf_token %}
+                            <button type="submit">Log out</button>
+                        </form>
+                    </li>
+                {% else %}
+                    <li><a href="{% url 'home' %}">Login</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %} 
+        {% endblock %}
+    </main>
+</body>
+</html>

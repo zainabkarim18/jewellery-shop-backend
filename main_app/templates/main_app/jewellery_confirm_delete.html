@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/delete-confirmation.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="confirmation-container">
+  <div class="confirmation-header">
+    <h1>Confirm Delete Jewellery</h1>
+  </div>
+
+  <div class="confirmation-body">
+    <h2>Are you sure you want to delete {{ jewellery.name }}?</h2>
+    <form action="{% url 'jewellery-delete' jewellery.id %}" method="post" class="confirmation-form">
+        {% csrf_token %}
+        <button type="submit" class="btn danger">Yes - Delete Jewellery!</button>
+        <a href="{% url 'jewellery-detail' jewellery.id %}" class="btn secondary">Cancel</a>
+    </form>
+  </div>
+</div>
+{% endblock %}

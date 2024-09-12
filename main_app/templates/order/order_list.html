@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'css/orders-list.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Order List</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>User</th>
+                    <th>Total Price</th>
+                    <th>Order Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                <tr>
+                    <td><a href="{% url 'order-detail' order.id %}">{{ order.id }}</a></td>
+                    <td>{{ order.user.username }}</td>
+                    <td>{{ order.total_price }}</td>
+                    <td>{{ order.order_date }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="4">No orders available.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

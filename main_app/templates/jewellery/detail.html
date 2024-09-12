@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/jewellery-detail.css' %}" />
+{% endblock %}
+
+{% block content %}
+<section class="jewellery-container">
+  <div class="jewellery-img">
+    <img src="{{ jewellery.image }}" alt="{{ jewellery.name }}" />
+  </div> 
+  <div class="jewellery-details">
+    <h1>{{ jewellery.name }}</h1>
+    <h2>Price: {{ jewellery.price }} BD</h2>
+    <p>{{ jewellery.description }}</p>
+    <p>Stock: {{ jewellery.stock }}</p>
+  </div>
+</section>
+
+<div class="jewellery-actions">
+  <a href="{% url 'jewellery-update' jewellery.id %}" class="btn warn">Edit</a>
+  <a href="{% url 'jewellery-delete' jewellery.id %}" class="btn danger">Delete</a>
+</div>
+{% endblock %}
